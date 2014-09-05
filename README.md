@@ -21,7 +21,7 @@ index.html:
   </head>
 
   <body unresolved>
-    <shared-textarea collection='public' document='test-document'></shared>
+    <shared-textarea collection='public' document='test-document'></shared-textarea>
   </body>
 </html>
 ```
