@@ -3,14 +3,14 @@
 This barely works, and is tied to a specific Heroku app. Documents will
 disappear periodically.
 
-Usage:
+Demo:
 
-- bower install Polymer/platform --save
-- bower install shared-textarea --save
+```sh
+bower install Polymer/platform --save
 
-index.html:
+bower install shared-textarea --save
 
-```html
+cat <<EOF > index.html
 <!doctype html>
 
 <html>
@@ -25,7 +25,10 @@ index.html:
       rows=10
       cols=80
       collection='public'
-      document='test-document'></shared-textarea>
+      document='test'></shared-textarea>
   </body>
 </html>
+EOF
+
+ruby -run -e httpd . -p 8080
 ```
