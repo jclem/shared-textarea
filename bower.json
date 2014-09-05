@@ -1,0 +1,29 @@
+{
+  "name": "shared-textarea",
+  "version": "0.0.0",
+  "authors": [
+    "Jonathan Clem <jonathan@jclem.net>"
+  ],
+  "description": "A Polymer component for collaborative editing",
+  "keywords": [
+    "polymer",
+    "collaborative",
+    "editing"
+  ],
+  "main": "shared-textarea.html",
+  "license": "MIT",
+  "homepage": "https://github.com/jclem/shared-textarea",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.4.0"
+  },
+  "devDependencies": {
+    "platform": "Polymer/platform#~0.4.0"
+  }
+}

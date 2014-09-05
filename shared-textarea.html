@@ -1,0 +1,34 @@
+<link rel='import' href='../polymer/polymer.html'>
+
+<polymer-element name='shared-textarea' attributes='documentName'>
+  <template>
+    <link rel='stylesheet' href='shared-textarea.css'>
+    <textarea id='textarea' rows='120' cols='80'></textarea>
+  </template>
+
+  <script>
+    Polymer({
+      created: function() {
+        var url        = 'wss://afternoon-gorge-3044.herokuapp.com'
+        var socket     = new WebSocket(url);
+        var share      = new sharejs.Connection(socket);
+        var collection = this.getAttribute('collection');
+        var docName    = this.getAttribute('document');
+        var doc        = share.get(collection, docName);
+
+        doc.subscribe();
+
+        doc.whenReady(function() {
+          if (!doc.type) {
+            doc.create('text');
+          }
+
+          doc.attachTextarea(this.$.textarea);
+        }.bind(this));
+      }
+    });
+  </script>
+
+  <script type="application/javascript" src="https://afternoon-gorge-3044.herokuapp.com/text.js"></script>
+  <script type="application/javascript" src="https://afternoon-gorge-3044.herokuapp.com/share.uncompressed.js"></script>
+</polymer-element>
