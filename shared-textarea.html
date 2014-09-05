@@ -10,7 +10,6 @@
     Polymer({
       created: function() {
         this.fetchScripts(function() {
-          var protocol   = this.getAttribute
           var socket     = new WebSocket(this.wsURI);
           var share      = new sharejs.Connection(socket);
           var collection = this.getAttribute('collection');
